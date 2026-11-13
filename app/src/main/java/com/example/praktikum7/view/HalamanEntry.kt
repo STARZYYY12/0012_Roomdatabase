@@ -119,3 +119,21 @@ fun FormInputSiswa(
             enabled = enabled,
             singleLine = true
         )
+        OutlinedTextField(
+            value = detailSiswa.alamat,
+            onValueChange = {onValueChange(detailSiswa.copy(alamat=it))},
+            label = { Text(stringResource(R.string.alamat)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+        OutlinedTextField(
+            value = detailSiswa.telpon,
+            onValueChange = {onValueChange(detailSiswa.copy(telpon = it))},
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+            label = { Text(text = stringResource(R.string.telpon)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
+
