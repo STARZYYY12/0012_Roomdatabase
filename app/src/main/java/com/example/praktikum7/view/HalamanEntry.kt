@@ -106,4 +106,16 @@ fun FormInputSiswa(
     modifier: Modifier = Modifier,
     onValueChange: (DetailSiswa) -> Unit = {},
     enabled: Boolean = true
-)
+){
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
+    ){
+        OutlinedTextField(
+            value = detailSiswa.nama,
+            onValueChange = {onValueChange(detailSiswa.copy(nama=it)) },
+            label = { Text(stringResource(R.string.nama)) },
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
